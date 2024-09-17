@@ -3,7 +3,7 @@
   "description": "Estimating the value of π via random sampling methods.",
   "autosize": "pad",
   "padding": 5,
-  "height": 380,
+  "height": 300,
   "width": 140,
   "data": [
     {

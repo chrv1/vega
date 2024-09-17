@@ -328,57 +328,75 @@
   "layout": {"padding": 70, "rows": 2, "columns": 2},
   "encode": {"enter": {"x": {"signal": "radius"}, "y": {"signal": "radius"}}},
   "marks": [
+    {"type": "group", "name": "empty_cell", "style": "cell"},
     {
       "type": "group",
-      "name": "concat_2_group",
       "style": "cell",
-      "title": {"text": "Energy Histogram", "frame": "group"},
+      "title": {"text": "Latent space of generator G", "frame": "group"},
       "encode": {
-        "update": {
-          "width": {"signal": "height"},
-          "height": {"signal": "height"}
-        }
+        "update": {"width": {"signal": "width"}, "height": {"signal": "height"}}
       },
       "marks": [
         {
-          "type": "rect",
-          "from": {"data": "binned"},
+          "type": "symbol",
+          "from": {"data": "results"},
           "encode": {
             "update": {
-              "x": {"scale": "bar_xscale", "field": "bin0"},
-              "x2": {
-                "scale": "bar_xscale",
-                "field": "bin1",
-                "offset": {"signal": "binStep > 0.02 ? -0.5 : 0"}
-              },
-              "y": {"scale": "bar_yscale", "field": "count"},
-              "y2": {"scale": "bar_yscale", "value": 0},
-              "fill": {"scale": "color", "field": "bin0"}
+              "opacity": {"value": 0.6},
+              "size": {"value": 50},
+              "fill": {"scale": "color", "field": "Q_H"},
+              "x": {"scale": "x_scale", "field": "z0"},
+              "y": {"scale": "y_scale", "field": "z1"},
+              "shape": {"value": "circle"}
             },
-            "hover": {"fill": {"value": "firebrick"}}
-          }
-        },
-        {
-          "type": "rule",
-          "encode": {
-            "enter": {"stroke": {"value": "firebrick"}},
-            "update": {
-              "x": {"scale": "bar_xscale", "value": 181},
-              "y": {"scale": "bar_yscale", "value": 0},
-              "y2": {"value": 0}
-            }
+            "hover": {
+              "fill": {"value": "black"},
+              "opacity": {"value": 1},
+              "size": {"value": 100}
+            },
+            "select": {"size": {"value": 100}}
           }
         }
       ],
       "axes": [
         {
-          "scale": "bar_xscale",
-          "range": [0.2, 2.8],
+          "scale": "x_scale",
           "orient": "bottom",
           "title": "x",
           "labelFlush": true,
           "labelOverlap": true,
           "zindex": 1
+        },
+        {
+          "scale": "x_scale",
+          "orient": "bottom",
+          "grid": true,
+          "gridScale": "y_scale",
+          "domain": false,
+          "labels": false,
+          "maxExtent": 0,
+          "minExtent": 0,
+          "ticks": false,
+          "zindex": 0
+        },
+        {
+          "scale": "y_scale",
+          "orient": "left",
+          "title": "y",
+          "labelOverlap": true,
+          "zindex": 1
+        },
+        {
+          "scale": "y_scale",
+          "orient": "left",
+          "grid": true,
+          "gridScale": "x_scale",
+          "domain": false,
+          "labels": false,
+          "maxExtent": 0,
+          "minExtent": 0,
+          "ticks": false,
+          "zindex": 0
         }
       ]
     },
@@ -536,72 +554,55 @@
     },
     {
       "type": "group",
+      "name": "concat_2_group",
       "style": "cell",
-      "title": {"text": "Latent space of generator G", "frame": "group"},
+      "title": {"text": "Energy Histogram", "frame": "group"},
       "encode": {
-        "update": {"width": {"signal": "width"}, "height": {"signal": "height"}}
+        "update": {
+          "width": {"signal": "height"},
+          "height": {"signal": "height"}
+        }
       },
       "marks": [
         {
-          "type": "symbol",
-          "from": {"data": "results"},
+          "type": "rect",
+          "from": {"data": "binned"},
           "encode": {
             "update": {
-              "opacity": {"value": 0.6},
-              "size": {"value": 50},
-              "fill": {"scale": "color", "field": "Q_H"},
-              "x": {"scale": "x_scale", "field": "z0"},
-              "y": {"scale": "y_scale", "field": "z1"},
-              "shape": {"value": "circle"}
+              "x": {"scale": "bar_xscale", "field": "bin0"},
+              "x2": {
+                "scale": "bar_xscale",
+                "field": "bin1",
+                "offset": {"signal": "binStep > 0.02 ? -0.5 : 0"}
+              },
+              "y": {"scale": "bar_yscale", "field": "count"},
+              "y2": {"scale": "bar_yscale", "value": 0},
+              "fill": {"scale": "color", "field": "bin0"}
             },
-            "hover": {
-              "fill": {"value": "black"},
-              "opacity": {"value": 1},
-              "size": {"value": 100}
-            },
-            "select": {"size": {"value": 100}}
+            "hover": {"fill": {"value": "firebrick"}}
+          }
+        },
+        {
+          "type": "rule",
+          "encode": {
+            "enter": {"stroke": {"value": "firebrick"}},
+            "update": {
+              "x": {"scale": "bar_xscale", "value": 181},
+              "y": {"scale": "bar_yscale", "value": 0},
+              "y2": {"value": 0}
+            }
           }
         }
       ],
       "axes": [
         {
-          "scale": "x_scale",
+          "scale": "bar_xscale",
+          "range": [0.2, 2.8],
           "orient": "bottom",
           "title": "x",
           "labelFlush": true,
           "labelOverlap": true,
           "zindex": 1
-        },
-        {
-          "scale": "x_scale",
-          "orient": "bottom",
-          "grid": true,
-          "gridScale": "y_scale",
-          "domain": false,
-          "labels": false,
-          "maxExtent": 0,
-          "minExtent": 0,
-          "ticks": false,
-          "zindex": 0
-        },
-        {
-          "scale": "y_scale",
-          "orient": "left",
-          "title": "y",
-          "labelOverlap": true,
-          "zindex": 1
-        },
-        {
-          "scale": "y_scale",
-          "orient": "left",
-          "grid": true,
-          "gridScale": "x_scale",
-          "domain": false,
-          "labels": false,
-          "maxExtent": 0,
-          "minExtent": 0,
-          "ticks": false,
-          "zindex": 0
         }
       ]
     }

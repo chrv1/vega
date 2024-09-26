@@ -1,0 +1,803 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "description": "Estimating the value of π via random sampling methods.",
+  "autosize": "pad",
+  "padding": 5,
+  "height": 300,
+  "width": 300,
+  "data": [
+    {
+      "name": "initial_building",
+      "values": [
+        {"key": "area", "value": 73, "category": 0},
+        {"key": "Ug", "value": 83, "category": 0},
+        {"key": "gp", "value": 40, "category": 0},
+        {"key": "thickness_roofA", "value": 100, "category": 0},
+        {"key": "thickness_construction_Structure", "value": 17, "category": 0},
+        {"key": "thickness_construction_Insulation", "value": 67, "category": 0}
+      ]
+    },
+    {
+      "name": "hover_building",
+      "values": [
+        {
+          "key": "area",
+          "value": 72.7,
+          "category": 1,
+          "area": 0,
+          "Ug": 0,
+          "gp": 0,
+          "thickness_roofA": 0,
+          "thickness_construction_Structure": 0,
+          "thickness_construction_Insulation": 0
+        },
+        {
+          "key": "Ug",
+          "value": 83.3,
+          "category": 1,
+          "area": 0,
+          "Ug": 0,
+          "gp": 0,
+          "thickness_roofA": 0,
+          "thickness_construction_Structure": 0,
+          "thickness_construction_Insulation": 0
+        },
+        {
+          "key": "gp",
+          "value": 40,
+          "category": 1,
+          "area": 0,
+          "Ug": 0,
+          "gp": 0,
+          "thickness_roofA": 0,
+          "thickness_construction_Structure": 0,
+          "thickness_construction_Insulation": 0
+        },
+        {
+          "key": "thickness_roofA",
+          "value": 100,
+          "category": 1,
+          "area": 0,
+          "Ug": 0,
+          "gp": 0,
+          "thickness_roofA": 0,
+          "thickness_construction_Structure": 0,
+          "thickness_construction_Insulation": 0
+        },
+        {
+          "key": "thickness_construction_Structure",
+          "value": 16.7,
+          "category": 1,
+          "area": 0,
+          "Ug": 0,
+          "gp": 0,
+          "thickness_roofA": 0,
+          "thickness_construction_Structure": 0,
+          "thickness_construction_Insulation": 0
+        },
+        {
+          "key": "thickness_construction_Insulation",
+          "value": 66.7,
+          "category": 1,
+          "area": 0,
+          "Ug": 0,
+          "gp": 0,
+          "thickness_roofA": 0,
+          "thickness_construction_Structure": 0,
+          "thickness_construction_Insulation": 0
+        }
+      ],
+      "transform": [
+        {"type": "formula", "as": "area", "expr": "hover_area"},
+        {"type": "formula", "as": "Ug", "expr": "hover_Ug"},
+        {"type": "formula", "as": "gp", "expr": "hover_gp"},
+        {
+          "type": "formula",
+          "as": "thickness_roofA",
+          "expr": "hover_thickness_roofA"
+        },
+        {
+          "type": "formula",
+          "as": "thickness_construction_Structure",
+          "expr": "hover_thickness_construction_Structure"
+        },
+        {
+          "type": "formula",
+          "as": "thickness_construction_Insulation",
+          "expr": "hover_thickness_construction_Insulation"
+        }
+      ]
+    },
+    {
+      "name": "window_img",
+      "values": [
+        {
+          "x": 150,
+          "y": 295,
+          "area": "area_S",
+          "svg": "M 19,19L 57,19L 57,57L 19,57L 19,19 Z M 22,22L 22,37L 37,37L 37,22L 22,22 Z M 54,37L 54,22L 39,22L 39,37L 54,37 Z M 22,54L 37,54L 37,39L 22,39L 22,54 Z M 54,54L 54,39L 39,39L 39,54L 54,54 Z",
+          "area_S": 10,
+          "area_N": 10,
+          "area_E": 10.5,
+          "area_W": 10.5
+        },
+        {
+          "x": 320,
+          "y": 160,
+          "area": "area_E",
+          "svg": "M 19,19L 57,19L 57,57L 19,57L 19,19 Z M 22,22L 22,37L 37,37L 37,22L 22,22 Z M 54,37L 54,22L 39,22L 39,37L 54,37 Z M 22,54L 37,54L 37,39L 22,39L 22,54 Z M 54,54L 54,39L 39,39L 39,54L 54,54 Z",
+          "area_S": 10,
+          "area_N": 10,
+          "area_E": 10.5,
+          "area_W": 10.5
+        },
+        {
+          "x": 150,
+          "y": 10,
+          "area": "area_N",
+          "svg": "M 19,19L 57,19L 57,57L 19,57L 19,19 Z M 22,22L 22,37L 37,37L 37,22L 22,22 Z M 54,37L 54,22L 39,22L 39,37L 54,37 Z M 22,54L 37,54L 37,39L 22,39L 22,54 Z M 54,54L 54,39L 39,39L 39,54L 54,54 Z",
+          "area_S": 10,
+          "area_N": 10,
+          "area_E": 10.5,
+          "area_W": 10.5
+        },
+        {
+          "x": 0,
+          "y": 160,
+          "area": "area_W",
+          "svg": "M 19,19L 57,19L 57,57L 19,57L 19,19 Z M 22,22L 22,37L 37,37L 37,22L 22,22 Z M 54,37L 54,22L 39,22L 39,37L 54,37 Z M 22,54L 37,54L 37,39L 22,39L 22,54 Z M 54,54L 54,39L 39,39L 39,54L 54,54 Z",
+          "area_S": 10,
+          "area_N": 10,
+          "area_E": 10.5,
+          "area_W": 10.5
+        }
+      ],
+      "transform": [
+        {"type": "formula", "as": "area_S", "expr": "hover_area_S"},
+        {"type": "formula", "as": "area_N", "expr": "hover_area_N"},
+        {"type": "formula", "as": "area_E", "expr": "hover_area_E"},
+        {"type": "formula", "as": "area_W", "expr": "hover_area_W"}
+      ]
+    },
+    {
+      "name": "feature_correlation",
+      "url": "https://raw.githubusercontent.com/chrv1/vega/refs/heads/main/all_batches_correlation_data.csv",
+      "format": {"type": "csv", "parse": "auto", "delimiter": ","},
+      "transform": [{"type": "filter", "expr": "datum.epoch <= num_epochs"}]
+    },
+    {
+      "name": "results",
+      "url": "https://raw.githubusercontent.com/chrv1/vega/refs/heads/main/combined_data3.csv",
+      "format": {"type": "csv", "parse": "auto", "delimiter": ","},
+      "transform": [
+        {"type": "filter", "expr": "datum.id <= num_points"},
+        {"type": "filter", "expr": "datum.epoch == num_epochs"}
+      ]
+    },
+    {
+      "name": "E_star",
+      "source": "results",
+      "transform": [{"type": "extent", "field": "energy", "signal": "extent2"}]
+    },
+    {
+      "name": "binned",
+      "source": "results",
+      "transform": [
+        {"type": "extent", "field": "energy", "signal": "extent"},
+        {
+          "type": "bin",
+          "field": "energy",
+          "extent": {"signal": "extent"},
+          "anchor": {"signal": "binOffset"},
+          "step": {"signal": "binStep"},
+          "nice": false
+        },
+        {
+          "type": "aggregate",
+          "key": "bin0",
+          "groupby": ["bin0", "bin1"],
+          "fields": ["bin0"],
+          "ops": ["count"],
+          "as": ["count"]
+        }
+      ]
+    },
+    {"name": "pi", "values": [{"value": 3.141592653589793}]},
+    {
+      "name": "table",
+      "values": [
+        {"key": "area_N", "value": 14, "category": 0},
+        {"key": "area_E", "value": 14, "category": 0},
+        {"key": "area_S", "value": 14, "category": 0},
+        {"key": "area_W", "value": 14, "category": 0}
+      ]
+    },
+    {
+      "name": "table_hover",
+      "values": [
+        {
+          "key": "area_N",
+          "category": 1,
+          "obj": {
+            "x": 150,
+            "y": 10,
+            "area": "area_N",
+            "svg": "M 19,19L 57,19L 57,57L 19,57L 19,19 Z M 22,22L 22,37L 37,37L 37,22L 22,22 Z M 54,37L 54,22L 39,22L 39,37L 54,37 Z M 22,54L 37,54L 37,39L 22,39L 22,54 Z M 54,54L 54,39L 39,39L 39,54L 54,54 Z",
+            "area_S": 10,
+            "area_N": 10,
+            "area_E": 10.5,
+            "area_W": 10.5
+          }
+        },
+        {
+          "key": "area_E",
+          "category": 1,
+          "obj": {
+            "x": 320,
+            "y": 160,
+            "area": "area_E",
+            "svg": "M 19,19L 57,19L 57,57L 19,57L 19,19 Z M 22,22L 22,37L 37,37L 37,22L 22,22 Z M 54,37L 54,22L 39,22L 39,37L 54,37 Z M 22,54L 37,54L 37,39L 22,39L 22,54 Z M 54,54L 54,39L 39,39L 39,54L 54,54 Z",
+            "area_S": 10,
+            "area_N": 10,
+            "area_E": 10.5,
+            "area_W": 10.5
+          }
+        },
+        {
+          "key": "area_S",
+          "category": 1,
+          "obj": {
+            "x": 150,
+            "y": 295,
+            "area": "area_S",
+            "svg": "M 19,19L 57,19L 57,57L 19,57L 19,19 Z M 22,22L 22,37L 37,37L 37,22L 22,22 Z M 54,37L 54,22L 39,22L 39,37L 54,37 Z M 22,54L 37,54L 37,39L 22,39L 22,54 Z M 54,54L 54,39L 39,39L 39,54L 54,54 Z",
+            "area_S": 10,
+            "area_N": 10,
+            "area_E": 10.5,
+            "area_W": 10.5
+          }
+        },
+        {
+          "key": "area_W",
+          "category": 1,
+          "obj": {
+            "x": 0,
+            "y": 160,
+            "area": "area_W",
+            "svg": "M 19,19L 57,19L 57,57L 19,57L 19,19 Z M 22,22L 22,37L 37,37L 37,22L 22,22 Z M 54,37L 54,22L 39,22L 39,37L 54,37 Z M 22,54L 37,54L 37,39L 22,39L 22,54 Z M 54,54L 54,39L 39,39L 39,54L 54,54 Z",
+            "area_S": 10,
+            "area_N": 10,
+            "area_E": 10.5,
+            "area_W": 10.5
+          }
+        }
+      ],
+      "transform": [
+        {
+          "type": "lookup",
+          "from": "window_img",
+          "key": "area",
+          "fields": ["key"],
+          "as": ["obj"],
+          "default": "not found"
+        }
+      ]
+    },
+    {
+      "name": "keys",
+      "source": "table",
+      "transform": [{"type": "aggregate", "groupby": ["key"]}]
+    }
+  ],
+  "signals": [
+    {"name": "radius", "update": "1"},
+    {"name": "description", "value": "", "update": ["Comparison"]},
+    {
+      "name": "num_points",
+      "value": 1000,
+      "bind": {
+        "input": "range",
+        "min": 1,
+        "max": 1000,
+        "step": 1,
+        "debounce": 10
+      }
+    },
+    {
+      "name": "num_epochs",
+      "value": 0,
+      "bind": {"input": "range", "min": 0, "max": 10000, "step": 500}
+    },
+    {"name": "binOffset", "value": 0.1},
+    {"name": "binStep", "value": 5},
+    {
+      "name": "hover",
+      "value": 0,
+      "on": [{"events": "click", "update": "datum"}]
+    },
+    {
+      "name": "data_S",
+      "value": null,
+      "update": " hover && isValid(hover.area_S) ? 'A: ' + hover.area_S +  ' U: ' + hover.area_S +  ' g: ' + hover.g_perp_S : ''"
+    },
+    {
+      "name": "data_N",
+      "value": "",
+      "update": "hover && isValid(hover.area_N) ? 'A: ' + hover.area_N +  ' U: ' + hover.area_N +  ' g: ' + hover.g_perp_N : ''"
+    },
+    {
+      "name": "data_E",
+      "value": "",
+      "update": "hover && isValid(hover.area_E) ? 'A: ' + hover.area_E +  ' U: ' + hover.area_E +  ' g: ' + hover.g_perp_E : ''"
+    },
+    {
+      "name": "data_W",
+      "value": "",
+      "update": "hover && isValid(hover.area_W) ? 'A: ' + hover.area_W +  ' U: ' + hover.area_W +  ' g: ' + hover.g_perp_W : ''"
+    },
+    {
+      "name": "hover_area_S",
+      "value": "",
+      "update": "hover ? hover.area_S : 10.0"
+    },
+    {
+      "name": "hover_area_N",
+      "value": "",
+      "update": "hover ? hover.area_N : 10.0"
+    },
+    {
+      "name": "hover_area_E",
+      "value": "",
+      "update": "hover ? hover.area_E : 10.5"
+    },
+    {
+      "name": "hover_area_W",
+      "value": "",
+      "update": "hover ? hover.area_W : 10.5"
+    },
+    {
+      "name": "hover_areas",
+      "value": "",
+      "update": "hover ? hover.area_W + ',' + hover.area_E + ',' + hover.area_N + ',' + hover.area_S : [10,10,10,10]"
+    },
+    {"name": "hover_z0", "value": "", "update": "hover ? hover.z0 : 10"},
+    {"name": "hover_z1", "value": "", "update": "hover ? hover.z1 : 0"},
+    {"name": "hover_width", "value": "", "update": "hover ? hover.width : 0"},
+    {"name": "hover_heigth", "value": "", "update": "hover ? hover.heigth : 0"},
+    {
+      "name": "hover_area",
+      "value": "",
+      "update": "hover ? round((hover.height * hover_width -2.5)*100/(3.5*1.5-2.5)) : 0"
+    },
+    {
+      "name": "hover_Ug",
+      "value": "",
+      "update": "hover ? round((hover.Ug - 0.6)*100/(1.2-0.6)) : 0"
+    },
+    {
+      "name": "hover_gp",
+      "value": "",
+      "update": "hover ? round((hover.gp - 0.45) * 100 / (1.2-0.45)) : 0"
+    },
+    {
+      "name": "hover_thickness_roofA",
+      "value": "",
+      "update": "hover ? round((hover.thickness_roofA - 0.15) * 100 / (0.25 - 0.15)) : 0"
+    },
+    {
+      "name": "hover_thickness_construction_Structure",
+      "value": "",
+      "update": "hover ? round((hover.thickness_construction_Structure - 0.14) * 100 / (0.2-0.14)): 0"
+    },
+    {
+      "name": "hover_thickness_construction_Insulation",
+      "value": "",
+      "update": "hover ? round((hover.thickness_construction_Insulation - 0.15) * 100 / (0.3-0.15)) : 0"
+    },
+    {"name": "hover_energy", "value": "", "update": "hover ? hover.energy : 0"}
+  ],
+  "layout": {"padding": 70, "rows": 2, "columns": 3},
+  "encode": {"enter": {"x": {"signal": "radius"}, "y": {"signal": "radius"}}},
+  "marks": [
+    {"type": "group", "name": "empty_cell", "style": "cell"},
+    {
+      "type": "group",
+      "style": "cell",
+      "title": {"text": "Latent space of generator G", "frame": "group"},
+      "encode": {
+        "update": {"width": {"signal": "width"}, "height": {"signal": "height"}}
+      },
+      "marks": [
+        {
+          "type": "symbol",
+          "from": {"data": "results"},
+          "encode": {
+            "update": {
+              "opacity": {"value": 0.6},
+              "size": {"value": 50},
+              "fill": {"scale": "color", "field": "energy"},
+              "x": {"scale": "x_scale", "field": "z0"},
+              "y": {"scale": "y_scale", "field": "z1"},
+              "shape": {"value": "circle"}
+            },
+            "hover": {
+              "fill": {"value": "black"},
+              "opacity": {"value": 1},
+              "size": {"value": 100}
+            },
+            "select": {"size": {"value": 100}}
+          }
+        }
+      ],
+      "axes": [
+        {
+          "scale": "x_scale",
+          "orient": "bottom",
+          "title": "x",
+          "labelFlush": true,
+          "labelOverlap": true,
+          "zindex": 1
+        },
+        {
+          "scale": "x_scale",
+          "orient": "bottom",
+          "grid": true,
+          "gridScale": "y_scale",
+          "domain": false,
+          "labels": false,
+          "maxExtent": 0,
+          "minExtent": 0,
+          "ticks": false,
+          "zindex": 0
+        },
+        {
+          "scale": "y_scale",
+          "orient": "left",
+          "title": "y",
+          "labelOverlap": true,
+          "zindex": 1
+        },
+        {
+          "scale": "y_scale",
+          "orient": "left",
+          "grid": true,
+          "gridScale": "x_scale",
+          "domain": false,
+          "labels": false,
+          "maxExtent": 0,
+          "minExtent": 0,
+          "ticks": false,
+          "zindex": 0
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "title": {"text": "Freature Correlations", "frame": "group"},
+      "style": "cell",
+      "axes": [],
+      "legends": [
+        {
+          "fill": "color_corr",
+          "type": "gradient",
+          "titleFontSize": 12,
+          "titlePadding": 4,
+          "orient": "left",
+          "gradientLength": {"signal": "height - 16"}
+        }
+      ],
+      "marks": [
+        {
+          "type": "rect",
+          "from": {"data": "feature_correlation"},
+          "encode": {
+            "enter": {
+              "x": {"scale": "x_corr", "field": "name"},
+              "y": {"scale": "y_corr", "field": "key"},
+              "width": {"scale": "x_corr", "band": 1},
+              "height": {"scale": "y_corr", "band": 1},
+              "tooltip": {
+                "signal": "datum.name + ' - ' + datum.key + ': ' + format(datum.value, '.2f')"
+              }
+            },
+            "update": {"fill": {"scale": "color_corr", "field": "value"}}
+          }
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "name": "spider_chart",
+      "title": {"text": "Spider chart", "frame": "group"},
+      "style": "cell",
+      "from": {
+        "facet": {
+          "data": "initial_building",
+          "name": "facet",
+          "groupby": ["category"]
+        }
+      },
+      "encode": {
+        "update": {
+          "width": {"signal": "height"},
+          "height": {"signal": "height"}
+        }
+      },
+      "marks": [
+        {
+          "type": "line",
+          "name": "category-line",
+          "from": {"data": "facet"},
+          "encode": {
+            "enter": {
+              "interpolate": {"value": "linear-closed"},
+              "x": {
+                "signal": "scale('radial', datum.value) * cos(scale('angular', datum.key)) + height/2 "
+              },
+              "y": {
+                "signal": "scale('radial', datum.value) * sin(scale('angular', datum.key)) + height/2"
+              },
+              "stroke": {"scale": "color_spider", "field": "category"},
+              "strokeWidth": {"value": 1},
+              "fill": {"scale": "color_spider", "field": "category"},
+              "fillOpacity": {"value": 0.1}
+            }
+          }
+        },
+        {
+          "type": "text",
+          "name": "value-text",
+          "from": {"data": "category-line"},
+          "encode": {
+            "enter": {
+              "x": {"signal": "datum.x"},
+              "y": {"signal": "datum.y"},
+              "text": {"signal": "datum.datum.value"},
+              "align": {"value": "center"},
+              "baseline": {"value": "middle"},
+              "fill": {"value": "black"}
+            }
+          }
+        },
+        {
+          "type": "line",
+          "name": "category-line-data",
+          "from": {"data": "hover_building"},
+          "encode": {
+            "update": {
+              "interpolate": {"value": "linear-closed"},
+              "x": {
+                "signal": "scale('radial', datum[datum.key]) * cos(scale('angular', datum.key)) + height/2 "
+              },
+              "y": {
+                "signal": "scale('radial', datum[datum.key]) * sin(scale('angular', datum.key)) + height/2"
+              },
+              "value": {"signal": "datum[datum.key]"},
+              "stroke": {"scale": "color_spider", "field": "category"},
+              "strokeWidth": {"value": 1},
+              "fill": {"scale": "color_spider", "field": "category"},
+              "fillOpacity": {"value": 0.1}
+            }
+          }
+        },
+        {
+          "type": "text",
+          "name": "value-text-data",
+          "from": {"data": "category-line-data"},
+          "encode": {
+            "update": {
+              "x": {"signal": "datum.x"},
+              "y": {"signal": "datum.y"},
+              "text": {"signal": "datum.value"},
+              "align": {"value": "center"},
+              "baseline": {"value": "middle"},
+              "fill": {"value": "black"}
+            }
+          }
+        },
+        {
+          "type": "rule",
+          "name": "radial-grid",
+          "from": {"data": "initial_building"},
+          "encode": {
+            "enter": {
+              "x": {"signal": "height/2"},
+              "y": {"signal": "height/2"},
+              "x2": {
+                "signal": "radius * cos(scale('angular', datum.key)) + height/2"
+              },
+              "y2": {
+                "signal": "radius * sin(scale('angular', datum.key)) + height/2"
+              },
+              "stroke": {"value": "lightgray"},
+              "strokeWidth": {"value": 1}
+            }
+          }
+        },
+        {
+          "type": "text",
+          "name": "key-label",
+          "from": {"data": "initial_building"},
+          "zindex": 1,
+          "encode": {
+            "enter": {
+              "x": {
+                "signal": "(radius + height/2) * cos(scale('angular', datum.key)) + height/2"
+              },
+              "y": {
+                "signal": "(radius + height/2) * sin(scale('angular', datum.key)) + height/2"
+              },
+              "text": {"field": "key"},
+              "align": [
+                {
+                  "test": "abs(scale('angular', datum.key)) > PI / 2",
+                  "value": "right"
+                },
+                {"value": "left"}
+              ],
+              "baseline": [
+                {"test": "scale('angular', datum.key) > 0", "value": "top"},
+                {"test": "scale('angular', datum.key) == 0", "value": "middle"},
+                {"value": "bottom"}
+              ],
+              "fill": {"value": "black"},
+              "fontWeight": {"value": "bold"}
+            }
+          }
+        },
+        {
+          "type": "line",
+          "name": "outer-line",
+          "from": {"data": "radial-grid"},
+          "encode": {
+            "enter": {
+              "interpolate": {"value": "linear-closed"},
+              "x": {"field": "x2"},
+              "y": {"field": "y2"},
+              "stroke": {"value": "lightgray"},
+              "strokeWidth": {"value": 1}
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "name": "concat_2_group",
+      "style": "cell",
+      "title": {"text": "Energy Histogram", "frame": "group"},
+      "encode": {
+        "update": {
+          "width": {"signal": "height"},
+          "height": {"signal": "height"}
+        }
+      },
+      "marks": [
+        {
+          "type": "rect",
+          "from": {"data": "binned"},
+          "encode": {
+            "update": {
+              "x": {"scale": "bar_xscale", "field": "bin0"},
+              "x2": {
+                "scale": "bar_xscale",
+                "field": "bin1",
+                "offset": {"signal": "binStep > 0.02 ? -0.5 : 0"}
+              },
+              "y": {"scale": "bar_yscale", "field": "count"},
+              "y2": {"scale": "bar_yscale", "value": 0},
+              "fill": {"scale": "color", "field": "bin0"}
+            },
+            "hover": {"fill": {"value": "firebrick"}}
+          }
+        },
+        {
+          "type": "rule",
+          "encode": {
+            "enter": {"stroke": {"value": "firebrick"}},
+            "update": {
+              "x": {"scale": "bar_xscale", "value": 46752.73189989},
+              "y": {"scale": "bar_yscale", "value": 0},
+              "y2": {"value": 0}
+            }
+          }
+        }
+      ],
+      "axes": [
+        {
+          "scale": "bar_xscale",
+          "range": [0.2, 2.8],
+          "orient": "bottom",
+          "title": "x",
+          "labelFlush": true,
+          "labelOverlap": true,
+          "zindex": 1
+        }
+      ]
+    }
+  ],
+  "scales": [
+    {
+      "name": "x_corr",
+      "type": "band",
+      "domain": {"data": "feature_correlation", "field": "name"},
+      "range": {"signal": "[0, height]"}
+    },
+    {
+      "name": "y_corr",
+      "type": "band",
+      "domain": {"data": "feature_correlation", "field": "key"},
+      "range": {"signal": "[0, height]"}
+    },
+    {
+      "name": "color_corr",
+      "type": "linear",
+      "range": {"scheme": "redblue"},
+      "domain": {"data": "feature_correlation", "field": "value"},
+      "zero": false,
+      "nice": true
+    },
+    {
+      "name": "x_scale",
+      "type": "linear",
+      "domain": {"data": "results", "field": "z0"},
+      "range": "height",
+      "reverse": true,
+      "nice": true,
+      "zero": true
+    },
+    {
+      "name": "y_scale",
+      "type": "linear",
+      "domain": {"data": "results", "field": "z1"},
+      "range": "height",
+      "nice": true,
+      "zero": true
+    },
+    {
+      "name": "color",
+      "type": "linear",
+      "domain": {"data": "results", "field": "energy"},
+      "range": {"scheme": "inferno"}
+    },
+    {
+      "name": "bar_xscale",
+      "type": "linear",
+      "range": "height",
+      "domain": [45500, 48000],
+      "reverse": true,
+      "zero": false
+    },
+    {
+      "name": "bar_yscale",
+      "type": "linear",
+      "domain": {"data": "binned", "field": "count"},
+      "range": "height",
+      "zero": false,
+      "nice": true
+    },
+    {
+      "name": "angular",
+      "type": "point",
+      "range": {"signal": "[-PI, PI]"},
+      "padding": 0.5,
+      "domain": {"data": "initial_building", "field": "key"}
+    },
+    {
+      "name": "radial",
+      "type": "linear",
+      "range": {"signal": "[0, height/2]"},
+      "zero": true,
+      "nice": false,
+      "domain": {"data": "initial_building", "field": "value"},
+      "domainMin": 0
+    },
+    {
+      "name": "color_spider",
+      "type": "ordinal",
+      "domain": [0, 1],
+      "range": {"scheme": "category10"}
+    }
+  ],
+  "config": {"axisY": {"minExtent": 30}}
+}

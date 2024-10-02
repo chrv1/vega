@@ -39,67 +39,67 @@
           "key": "area",
           "value": 72.7,
           "category": 1,
-          "area": null,
-          "Ug": null,
-          "gp": null,
-          "thickness_roofA": null,
-          "thickness_construction_Structure": null,
-          "thickness_construction_Insulation": null
+          "area": 0,
+          "Ug": 0,
+          "gp": 0,
+          "thickness_roofA": 0,
+          "thickness_construction_Structure": 0,
+          "thickness_construction_Insulation": 0
         },
         {
           "key": "Ug",
           "value": 83.3,
           "category": 1,
-          "area": null,
-          "Ug": null,
-          "gp": null,
-          "thickness_roofA": null,
-          "thickness_construction_Structure": null,
-          "thickness_construction_Insulation": null
+          "area": 0,
+          "Ug": 0,
+          "gp": 0,
+          "thickness_roofA": 0,
+          "thickness_construction_Structure": 0,
+          "thickness_construction_Insulation": 0
         },
         {
           "key": "gp",
           "value": 40,
           "category": 1,
-          "area": null,
-          "Ug": null,
-          "gp": null,
-          "thickness_roofA": null,
-          "thickness_construction_Structure": null,
-          "thickness_construction_Insulation": null
+          "area": 0,
+          "Ug": 0,
+          "gp": 0,
+          "thickness_roofA": 0,
+          "thickness_construction_Structure": 0,
+          "thickness_construction_Insulation": 0
         },
         {
           "key": "thickness_roofA",
           "value": 100,
           "category": 1,
-          "area": null,
-          "Ug": null,
-          "gp": null,
-          "thickness_roofA": null,
-          "thickness_construction_Structure": null,
-          "thickness_construction_Insulation": null
+          "area": 0,
+          "Ug": 0,
+          "gp": 0,
+          "thickness_roofA": 0,
+          "thickness_construction_Structure": 0,
+          "thickness_construction_Insulation": 0
         },
         {
           "key": "thickness_construction_Structure",
           "value": 16.7,
           "category": 1,
-          "area": null,
-          "Ug": null,
-          "gp": null,
-          "thickness_roofA": null,
-          "thickness_construction_Structure": null,
-          "thickness_construction_Insulation": null
+          "area": 0,
+          "Ug": 0,
+          "gp": 0,
+          "thickness_roofA": 0,
+          "thickness_construction_Structure": 0,
+          "thickness_construction_Insulation": 0
         },
         {
           "key": "thickness_construction_Insulation",
           "value": 66.7,
           "category": 1,
-          "area": null,
-          "Ug": null,
-          "gp": null,
-          "thickness_roofA": null,
-          "thickness_construction_Structure": null,
-          "thickness_construction_Insulation": null
+          "area": 0,
+          "Ug": 0,
+          "gp": 0,
+          "thickness_roofA": 0,
+          "thickness_construction_Structure": 0,
+          "thickness_construction_Insulation": 0
         }
       ],
       "transform": [
@@ -130,25 +130,41 @@
           "x": 150,
           "y": 295,
           "area": "area_S",
-          "svg": "M 19,19L 57,19L 57,57L 19,57L 19,19 Z M 22,22L 22,37L 37,37L 37,22L 22,22 Z M 54,37L 54,22L 39,22L 39,37L 54,37 Z M 22,54L 37,54L 37,39L 22,39L 22,54 Z M 54,54L 54,39L 39,39L 39,54L 54,54 Z"
+          "svg": "M 19,19L 57,19L 57,57L 19,57L 19,19 Z M 22,22L 22,37L 37,37L 37,22L 22,22 Z M 54,37L 54,22L 39,22L 39,37L 54,37 Z M 22,54L 37,54L 37,39L 22,39L 22,54 Z M 54,54L 54,39L 39,39L 39,54L 54,54 Z",
+          "area_S": 10,
+          "area_N": 10,
+          "area_E": 10.5,
+          "area_W": 10.5
         },
         {
           "x": 320,
           "y": 160,
           "area": "area_E",
-          "svg": "M 19,19L 57,19L 57,57L 19,57L 19,19 Z M 22,22L 22,37L 37,37L 37,22L 22,22 Z M 54,37L 54,22L 39,22L 39,37L 54,37 Z M 22,54L 37,54L 37,39L 22,39L 22,54 Z M 54,54L 54,39L 39,39L 39,54L 54,54 Z"
+          "svg": "M 19,19L 57,19L 57,57L 19,57L 19,19 Z M 22,22L 22,37L 37,37L 37,22L 22,22 Z M 54,37L 54,22L 39,22L 39,37L 54,37 Z M 22,54L 37,54L 37,39L 22,39L 22,54 Z M 54,54L 54,39L 39,39L 39,54L 54,54 Z",
+          "area_S": 10,
+          "area_N": 10,
+          "area_E": 10.5,
+          "area_W": 10.5
         },
         {
           "x": 150,
           "y": 10,
           "area": "area_N",
-          "svg": "M 19,19L 57,19L 57,57L 19,57L 19,19 Z M 22,22L 22,37L 37,37L 37,22L 22,22 Z M 54,37L 54,22L 39,22L 39,37L 54,37 Z M 22,54L 37,54L 37,39L 22,39L 22,54 Z M 54,54L 54,39L 39,39L 39,54L 54,54 Z"
+          "svg": "M 19,19L 57,19L 57,57L 19,57L 19,19 Z M 22,22L 22,37L 37,37L 37,22L 22,22 Z M 54,37L 54,22L 39,22L 39,37L 54,37 Z M 22,54L 37,54L 37,39L 22,39L 22,54 Z M 54,54L 54,39L 39,39L 39,54L 54,54 Z",
+          "area_S": 10,
+          "area_N": 10,
+          "area_E": 10.5,
+          "area_W": 10.5
         },
         {
           "x": 0,
           "y": 160,
           "area": "area_W",
-          "svg": "M 19,19L 57,19L 57,57L 19,57L 19,19 Z M 22,22L 22,37L 37,37L 37,22L 22,22 Z M 54,37L 54,22L 39,22L 39,37L 54,37 Z M 22,54L 37,54L 37,39L 22,39L 22,54 Z M 54,54L 54,39L 39,39L 39,54L 54,54 Z"
+          "svg": "M 19,19L 57,19L 57,57L 19,57L 19,19 Z M 22,22L 22,37L 37,37L 37,22L 22,22 Z M 54,37L 54,22L 39,22L 39,37L 54,37 Z M 22,54L 37,54L 37,39L 22,39L 22,54 Z M 54,54L 54,39L 39,39L 39,54L 54,54 Z",
+          "area_S": 10,
+          "area_N": 10,
+          "area_E": 10.5,
+          "area_W": 10.5
         }
       ],
       "transform": [
@@ -160,13 +176,13 @@
     },
     {
       "name": "feature_correlation",
-      "url": "https://raw.githubusercontent.com/chrv1/vega/refs/heads/main/true_energies_corr.csv",
+      "url": "https://raw.githubusercontent.com/chrv1/vega/refs/heads/main/bimodal_correlation.csv",
       "format": {"type": "csv", "parse": "auto", "delimiter": ","},
       "transform": [{"type": "filter", "expr": "datum.epoch == num_epochs"}]
     },
     {
       "name": "results",
-      "url": "https://raw.githubusercontent.com/chrv1/vega/refs/heads/main/true_energies_data.csv",
+      "url": "https://raw.githubusercontent.com/chrv1/vega/refs/heads/main/bimodal_data.csv",
       "format": {"type": "csv", "parse": "auto", "delimiter": ","},
       "transform": [
         {"type": "filter", "expr": "datum.id <= num_points"},
@@ -222,7 +238,11 @@
             "x": 150,
             "y": 10,
             "area": "area_N",
-            "svg": "M 19,19L 57,19L 57,57L 19,57L 19,19 Z M 22,22L 22,37L 37,37L 37,22L 22,22 Z M 54,37L 54,22L 39,22L 39,37L 54,37 Z M 22,54L 37,54L 37,39L 22,39L 22,54 Z M 54,54L 54,39L 39,39L 39,54L 54,54 Z"
+            "svg": "M 19,19L 57,19L 57,57L 19,57L 19,19 Z M 22,22L 22,37L 37,37L 37,22L 22,22 Z M 54,37L 54,22L 39,22L 39,37L 54,37 Z M 22,54L 37,54L 37,39L 22,39L 22,54 Z M 54,54L 54,39L 39,39L 39,54L 54,54 Z",
+            "area_S": 10,
+            "area_N": 10,
+            "area_E": 10.5,
+            "area_W": 10.5
           }
         },
         {
@@ -232,7 +252,11 @@
             "x": 320,
             "y": 160,
             "area": "area_E",
-            "svg": "M 19,19L 57,19L 57,57L 19,57L 19,19 Z M 22,22L 22,37L 37,37L 37,22L 22,22 Z M 54,37L 54,22L 39,22L 39,37L 54,37 Z M 22,54L 37,54L 37,39L 22,39L 22,54 Z M 54,54L 54,39L 39,39L 39,54L 54,54 Z"
+            "svg": "M 19,19L 57,19L 57,57L 19,57L 19,19 Z M 22,22L 22,37L 37,37L 37,22L 22,22 Z M 54,37L 54,22L 39,22L 39,37L 54,37 Z M 22,54L 37,54L 37,39L 22,39L 22,54 Z M 54,54L 54,39L 39,39L 39,54L 54,54 Z",
+            "area_S": 10,
+            "area_N": 10,
+            "area_E": 10.5,
+            "area_W": 10.5
           }
         },
         {
@@ -242,7 +266,11 @@
             "x": 150,
             "y": 295,
             "area": "area_S",
-            "svg": "M 19,19L 57,19L 57,57L 19,57L 19,19 Z M 22,22L 22,37L 37,37L 37,22L 22,22 Z M 54,37L 54,22L 39,22L 39,37L 54,37 Z M 22,54L 37,54L 37,39L 22,39L 22,54 Z M 54,54L 54,39L 39,39L 39,54L 54,54 Z"
+            "svg": "M 19,19L 57,19L 57,57L 19,57L 19,19 Z M 22,22L 22,37L 37,37L 37,22L 22,22 Z M 54,37L 54,22L 39,22L 39,37L 54,37 Z M 22,54L 37,54L 37,39L 22,39L 22,54 Z M 54,54L 54,39L 39,39L 39,54L 54,54 Z",
+            "area_S": 10,
+            "area_N": 10,
+            "area_E": 10.5,
+            "area_W": 10.5
           }
         },
         {
@@ -252,7 +280,11 @@
             "x": 0,
             "y": 160,
             "area": "area_W",
-            "svg": "M 19,19L 57,19L 57,57L 19,57L 19,19 Z M 22,22L 22,37L 37,37L 37,22L 22,22 Z M 54,37L 54,22L 39,22L 39,37L 54,37 Z M 22,54L 37,54L 37,39L 22,39L 22,54 Z M 54,54L 54,39L 39,39L 39,54L 54,54 Z"
+            "svg": "M 19,19L 57,19L 57,57L 19,57L 19,19 Z M 22,22L 22,37L 37,37L 37,22L 22,22 Z M 54,37L 54,22L 39,22L 39,37L 54,37 Z M 22,54L 37,54L 37,39L 22,39L 22,54 Z M 54,54L 54,39L 39,39L 39,54L 54,54 Z",
+            "area_S": 10,
+            "area_N": 10,
+            "area_E": 10.5,
+            "area_W": 10.5
           }
         }
       ],
@@ -298,7 +330,7 @@
       "bind": {"input": "range", "min": 0, "max": 500, "step": 100}
     },
     {"name": "binOffset", "value": 0.1},
-    {"name": "binStep", "value": 5},
+    {"name": "binStep", "value": 30},
     {
       "name": "hover",
       "value": 0,
@@ -1100,7 +1132,7 @@
                 "fillOpacity": {"value": 0.5},
                 "stroke": {"value": "transparent"}
               }
-            }
+            },
           }
         }
       ],
@@ -1133,6 +1165,8 @@
               "stroke": {"value": "#ddd"}
             }
           },
+
+          //                       "test": "!cell || inrange(datum[cell.datum.x.data], rangeX) && inrange(datum[cell.datum.y.data], rangeY)",
           "update": {"opacity": {"signal": "show_correlations"}},
           "marks": [
             {
@@ -1210,7 +1244,6 @@
               "y2": {"scale": "bar_yscale", "value": 0},
               "fill": {"scale": "color", "field": "bin0"}
             },
-            "hover": {"fill": {"value": "firebrick"}}
           }
         },
         {
@@ -1232,7 +1265,7 @@
               "x": {"scale": "bar_xscale", "signal": "hover_energy"},
               "y": {"scale": "bar_yscale", "value": 0},
               "y2": {"value": 0},
-              "stroke": {"signal": "hover_energy ? 'orange' : 'skyblue'"}
+              "stroke": {"signal": "hover_energy ? 'orange' : 'grey'"}
             }
           }
         }
@@ -1251,6 +1284,7 @@
     },
     {
       "type": "group",
+      // "title": {"text": "Feature Correlations", "frame": "group"},
       "style": "cell",
       "axes": [],
       "legends": [
@@ -1267,16 +1301,20 @@
           "gradientLength": {"signal": "height - 16"}
         }
       ],
-      "data": [
-        {
-          "name": "results2",
-          "url": "https://raw.githubusercontent.com/chrv1/vega/refs/heads/main/true_energies_data.csv",
-          "format": {"type": "csv", "parse": "auto", "delimiter": ","},
-          "transform": [
-            {"type": "filter", "expr": "datum.id <= num_points"},
-            {"type": "filter", "expr": "datum.epoch == num_epochs"}
-          ]
-        }
+      "data": [ 
+
+    {
+      "name": "results2",
+      "url": "https://raw.githubusercontent.com/chrv1/vega/refs/heads/main/true_energies_data.csv",
+      "format": {"type": "csv", "parse": "auto", "delimiter": ","},
+      "transform": [
+        // "test": "!cell || inrange(datum[cell.datum.x.data], rangeX) && inrange(datum[cell.datum.y.data], rangeY)",
+        {"type": "filter", "expr": "datum.id <= num_points"},
+        {"type": "filter", "expr": "datum.epoch == num_epochs"},
+        // {"type": "filter",  "expr": "inrange(datum[cell.datum.x.data], rangeX) && inrange(datum[cell.datum.y.data], rangeY)"},
+        // {"type": "formula", "as": "area", "expr": "datum.width * datum.height"}
+      ]
+    },
       ],
       "marks": [
         {
@@ -1350,7 +1388,7 @@
       "name": "bar_xscale",
       "type": "linear",
       "range": "height",
-      "domain": [43500, 46000],
+      "domain": [43380, 46000],
       "reverse": true,
       "zero": false
     },
